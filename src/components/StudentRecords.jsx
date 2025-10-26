@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';  // Import axios for API requests
+import API_BASE_URL from '../config/api.js';
 import StudentDetails from './StudentDetails';
 import './StudentRecords.css';
 import '../styles/common.css';
@@ -194,7 +195,7 @@ const StudentRecords = ({onStudentClick}) => {
         // Try to fetch from API
         let studentData = [];
         try {
-          const response = await axios.get('http://localhost:4500/api/vi/student');
+          const response = await axios.get(`${API_BASE_URL}/api/vi/student`);
           studentData = response.data;
         } catch (apiError) {
           console.warn('API fetch failed, using mock data:', apiError);

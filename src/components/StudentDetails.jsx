@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import StudentProfile from './StudentProfile';
 import './StudentDetails.css';
 import axios from 'axios';
+import API_BASE_URL from '../config/api.js';
 
 const StudentDetails = ({ studentId, onBack }) => {
   const [student, setStudent] = useState(null);
@@ -20,7 +21,7 @@ const StudentDetails = ({ studentId, onBack }) => {
         // Simulate API delay
      
 
-        const responce = await axios.get(`http://localhost:4500/api/vi/student/${studentId}`);
+        const responce = await axios.get(`${API_BASE_URL}/api/vi/student/${studentId}`);
        
         setStudent(responce.data);
         setError(null);

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';  // Import Axios
 import './DataImport.css';
 import '../styles/common.css';
+import API_BASE_URL from '../config/api.js';
 
 const DataImport = () => {
   const [formData, setFormData] = useState({
@@ -126,7 +127,7 @@ const DataImport = () => {
       }
 
       // Send POST request to backend
-      const response = await axios.post('http://localhost:4500/api/vi/student/register', formDataToSend, {
+      const response = await axios.post(`${API_BASE_URL}/api/vi/student/register`, formDataToSend, {
         headers: {
           'Content-Type': file ? 'multipart/form-data' : 'application/json'
         }

@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import axios from "axios"
+import API_BASE_URL from "../config/api.js"
 import {
   BarChart,
   Bar,
@@ -36,7 +37,7 @@ const GeneralDashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:4500/api/vi/student")
+        const response = await axios.get(`${API_BASE_URL}/api/vi/student`)
         setStudents(response.data)
         setLoading(false)
       } catch (err) {

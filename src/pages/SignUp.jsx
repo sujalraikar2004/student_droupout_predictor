@@ -5,6 +5,7 @@ import '../styles/common.css';
 import './SignUp.css';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthProvider';
+import API_BASE_URL from '../config/api.js';
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -68,7 +69,7 @@ const SignUp = () => {
       data.append('avatar', avatar);
 
       const response = await axios.post(
-        'http://localhost:4500/api/v1/faculty/register',
+        `${API_BASE_URL}/api/v1/faculty/register`,
         data,
         {
           headers: { 'Content-Type': 'multipart/form-data' },

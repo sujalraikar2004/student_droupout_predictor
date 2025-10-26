@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../App.css'; // Ensure your styles are loaded
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_BASE_URL from '../config/api.js';
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ const SignIn = () => {
       console.log('Email:', email);
       console.log('Password:', password);
 
-      const response = await axios.post('http://localhost:4500/api/v1/faculty/login', {
+      const response = await axios.post(`${API_BASE_URL}/api/v1/faculty/login`, {
         email, 
         password
       });
