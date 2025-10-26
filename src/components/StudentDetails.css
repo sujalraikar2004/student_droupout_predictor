@@ -1,0 +1,84 @@
+.student-details-container {
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.back-button {
+  background-color: var(--background-light);
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.back-button:hover {
+  background-color: var(--primary-light);
+  color: white;
+}
+
+.student-details-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 0;
+  color: var(--subtext);
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--background-light);
+  border-top: 4px solid var(--primary);
+  border-radius: 50%;
+  margin-bottom: 20px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.student-details-error {
+  text-align: center;
+  padding: 50px 0;
+  color: var(--text);
+}
+
+.error-icon {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--error);
+}
+
+.retry-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.retry-button:hover {
+  background-color: var(--primary-dark);
+}
+
+.error-message {
+  text-align: center;
+  padding: 50px 0;
+  color: var(--error);
+  font-size: 1.2rem;
+}
